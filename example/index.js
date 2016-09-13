@@ -7,16 +7,19 @@ import {
 } from 'react-native'
 import ProgressiveImage from 'react-native-progressive-image'
 
+const TheProgressiveImage = () =>
+  <ProgressiveImage
+    thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
+    imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
+    style={{ flex: 1, alignItems: 'stretch' }}
+  />
+
 export default () =>
   <View style={styles.container}>
     <StatusBar
       barStyle="light-content"
     />
-    <ProgressiveImage
-      thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
-      imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
-      style={{ flex: 1, alignItems: 'stretch' }}
-    />
+    <TheProgressiveImage />
   </View>
 
 const styles = StyleSheet.create({
