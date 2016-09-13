@@ -1,0 +1,18 @@
+{
+  "name": "react-native-progressive-image",
+  "version": "1.0.0",
+  "description": "Progressively load images. Loads a small thumbnail first. Includes fade and blur effects.",
+  "keywords": [
+    "android",
+    "blur",
+    "fade",
+    "ios",
+    "lazy loading",
+    "progressive",
+    "react-native"
+  ],
+  "license": "MIT",
+  "author": "Dylan Vann <dylan.vann@gmail.com> (dylanvann.com)",
+  "main": "index.js",
+  "repository": "DylanVann/react-native-progressive-image"
+}
