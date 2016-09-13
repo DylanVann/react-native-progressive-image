@@ -11,7 +11,6 @@ import ProgressiveImage from 'react-native-progressive-image'
 export default () =>
   <View style={styles.container}>
     <StatusBar
-      backgroundColor="blue"
       barStyle="light-content"
     />
     <ProgressiveImage
