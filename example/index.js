@@ -3,15 +3,20 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar,
 } from 'react-native'
 import ProgressiveImage from 'react-native-progressive-image'
 
 export default () =>
   <View style={styles.container}>
+    <StatusBar
+      backgroundColor="blue"
+      barStyle="light-content"
+    />
     <ProgressiveImage
-      thumbnailSource={{ uri: 'http://www.eatornotapp.com/img/Home.min.png?bust' + Math.random() }}
-      imageSource={{ uri: 'http://www.eatornotapp.com/img/Home.png?bust' + Math.random() }}
+      thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
+      imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
       style={{ flex: 1, alignItems: 'stretch' }}
     />
   </View>
