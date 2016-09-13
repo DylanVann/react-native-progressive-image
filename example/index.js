@@ -9,7 +9,7 @@ import ProgressiveImage from 'react-native-progressive-image'
 
 const TheProgressiveImage = () =>
   <ProgressiveImage
-    thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
+    thumbnailSource={{ uri: 'http://i.imgur.com/W3LKLla.png?bust' + Math.random() }}
     imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
     style={{ flex: 1, alignItems: 'stretch' }}
   />

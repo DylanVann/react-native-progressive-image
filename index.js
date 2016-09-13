@@ -37,6 +37,7 @@ export default class ProgressiveImage extends Component {
           style={[styles.image, { opacity: this.state.thumbnailOpacity }, this.props.style]}
           source={this.props.thumbnailSource}
           onLoad={() => this.onLoadThumbnail()}
+          blurRadius={this.props.thumbnailBlurRadius}
         />
         <Animated.Image
           resizeMode="cover"
@@ -66,9 +67,11 @@ ProgressiveImage.propTypes = {
   imageDuration: PropTypes.number.isRequired,
   thumbnailSource: PropTypes.object.isRequired,
   thumbnailDuration: PropTypes.number.isRequired,
+  thumbnailBlurRadius: PropTypes.number,
 }
 
 ProgressiveImage.defaultProps = {
   thumbnailDuration: 250,
   imageDuration: 250,
+  thumbnailBlurRadius: 5,
 }
