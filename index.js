@@ -13,14 +13,14 @@ export default class ProgressiveImage extends Component {
   onLoadThumbnail() {
     Animated.timing(this.state.thumbnailOpacity, {
       toValue: 1,
-      duration: this.props.thumbnailDuration,
+      duration: this.props.thumbnailFadeDuration,
     }).start()
   }
 
   onLoadImage() {
     Animated.timing(this.state.imageOpacity, {
       toValue: 1,
-      duration: this.props.imageDuration,
+      duration: this.props.imageFadeDuration,
     }).start()
   }
 
@@ -64,14 +64,14 @@ ProgressiveImage.propTypes = {
   placeHolderColor: PropTypes.string,
   placeHolderSource: PropTypes.number,
   imageSource: PropTypes.object.isRequired,
-  imageDuration: PropTypes.number.isRequired,
+  imageFadeDuration: PropTypes.number.isRequired,
   thumbnailSource: PropTypes.object.isRequired,
-  thumbnailDuration: PropTypes.number.isRequired,
+  thumbnailFadeDuration: PropTypes.number.isRequired,
   thumbnailBlurRadius: PropTypes.number,
 }
 
 ProgressiveImage.defaultProps = {
-  thumbnailDuration: 250,
-  imageDuration: 250,
+  thumbnailFadeDuration: 250,
+  imageFadeDuration: 250,
   thumbnailBlurRadius: 5,
 }
