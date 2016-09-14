@@ -3,6 +3,8 @@ Progressively load images. Loads a small thumbnail first. Includes fade and blur
 
 ![react-native-progressive-image demo](http://i.imgur.com/Ww5qqKz.gif)
 
+Based on [Sharath Prabhal's blog post](https://medium.com/the-react-native-log/progressive-image-loading-in-react-native-ecc88e724343#.e5pm41efa).
+
 ## Installation
 
 `npm i -S react-native-progressive-image`
