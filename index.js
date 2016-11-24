@@ -15,6 +15,7 @@ export default class ProgressiveImage extends Component {
       toValue: 1,
       duration: this.props.thumbnailFadeDuration,
     }).start()
+    this.props.onLoadThumbnail()
   }
 
   onLoadImage() {
@@ -22,6 +23,7 @@ export default class ProgressiveImage extends Component {
       toValue: 1,
       duration: this.props.imageFadeDuration,
     }).start()
+    this.props.onLoadImage()
   }
 
   render() {
@@ -65,6 +67,8 @@ ProgressiveImage.propTypes = {
   placeHolderSource: PropTypes.number,
   imageSource: PropTypes.object.isRequired,
   imageFadeDuration: PropTypes.number.isRequired,
+  onLoadThumbnail: PropTypes.func.isRequired,
+  onLoadImage: PropTypes.func.isRequired,
   thumbnailSource: PropTypes.object.isRequired,
   thumbnailFadeDuration: PropTypes.number.isRequired,
   thumbnailBlurRadius: PropTypes.number,
@@ -74,4 +78,6 @@ ProgressiveImage.defaultProps = {
   thumbnailFadeDuration: 250,
   imageFadeDuration: 250,
   thumbnailBlurRadius: 5,
+  onLoadThumbnail: Function.prototype,
+  onLoadImage: Function.prototype,
 }
