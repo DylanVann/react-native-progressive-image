@@ -32,3 +32,5 @@ const TheProgressiveImage = () =>
 | **`style`** | Make sure to include width and height, or use flex. | None |
 | **`imageFadeDuration`** | Fade-in duration for the image in ms. | `250` |
 | **`thumbnailFadeDuration`** | Fade-in duration for the thumbnail in ms. | `250` |
+| **`onLoadThumbnail`** | Callback function that gets called when the thumbnail is loaded. | `noop` |
+| **`onLoadImage`** | Callback function that gets called when the main image is loaded. | `noop` |
