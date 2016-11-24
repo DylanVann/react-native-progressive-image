@@ -1,6 +1,6 @@
 {
   "name": "react-native-progressive-image",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Progressively load images. Loads a small thumbnail first. Includes fade and blur effects.",
   "keywords": [
     "android",
