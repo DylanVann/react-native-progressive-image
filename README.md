@@ -1,13 +1,23 @@
-# react-native-progressive-image
+# ProgressiveImage
+
+🌁 ProgressiveImage, progressively load images with React Native.
+
+[![npm](https://img.shields.io/npm/v/react-native-progressive-image.svg?style=flat-square)](https://www.npmjs.com/package/react-native-progressive-image)
+[![license](https://img.shields.io/github/license/DylanVann/react-native-progressive-image.svg?style=flat-square)](https://github.com/DylanVann/react-native-progressive-image/blob/master/LICENSE)
+
+<p align="center" >
+  <img src="http://i.imgur.com/Ww5qqKz.gif" title="ProgressiveImage Demo">
+  <br>
+  <em>Demo of ProgressiveImage.</em>
+</p>
+
 Progressively load images. Loads a small thumbnail first. Includes fade and blur effects.
-
-![react-native-progressive-image demo](http://i.imgur.com/Ww5qqKz.gif)
-
-Based on [Sharath Prabhal's blog post](https://medium.com/the-react-native-log/progressive-image-loading-in-react-native-ecc88e724343#.e5pm41efa).
 
 ## Installation
 
-`npm i -S react-native-progressive-image`
+```bash
+yarn add react-native-progressive-image
+```
 
 ## Usage
 
@@ -34,3 +44,7 @@ const TheProgressiveImage = () =>
 | **`thumbnailFadeDuration`** | Fade-in duration for the thumbnail in ms. | `250` |
 | **`onLoadThumbnail`** | Callback function that gets called when the thumbnail is loaded. | `noop` |
 | **`onLoadImage`** | Callback function that gets called when the main image is loaded. | `noop` |
+
+## Credits
+
+Based on [Sharath Prabhal's blog post](https://medium.com/the-react-native-log/progressive-image-loading-in-react-native-ecc88e724343#.e5pm41efa).
