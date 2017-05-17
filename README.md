@@ -26,9 +26,11 @@ import ProgressiveImage from 'react-native-progressive-image'
 
 const TheProgressiveImage = () =>
   <ProgressiveImage
+    placeHolderSource={require('images/placeholder.png')}
     thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
     imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
     style={{ flex: 1, alignItems: 'stretch' }}
+    resizeMode="cover"
   />
 ```
 
@@ -36,6 +38,7 @@ const TheProgressiveImage = () =>
 
 | Prop | Description | Default |
 |---|---|---|
+| **`placeHolderSource`** | PlaceHolder source (e.g. require('./image.jpg')). | None |
 | **`imageSource`** | Image source (e.g. { uri: 'https://facebook.github.io/react/img/logo_og.png' }). | None |
 | **`thumbnailSource`** | Should be a low resolution version of the image used in `imageSource`. | None |
 | **`thumbnailBlurRadius`** | Blur radius for the low resolution thumbnail (iOS only). | `5` |
@@ -44,6 +47,7 @@ const TheProgressiveImage = () =>
 | **`thumbnailFadeDuration`** | Fade-in duration for the thumbnail in ms. | `250` |
 | **`onLoadThumbnail`** | Callback function that gets called when the thumbnail is loaded. | `noop` |
 | **`onLoadImage`** | Callback function that gets called when the main image is loaded. | `noop` |
+| **`resizeMode`** | Image resizeMode (e.g. resizeMode="cover". | None |
 
 ## Credits
 

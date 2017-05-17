@@ -30,19 +30,21 @@ export default class ProgressiveImage extends Component {
     return (
       <View style={this.props.style}>
         <Image
-          resizeMode="cover"
+          resizeMode={this.props.resizeMode}
           style={[styles.image, this.props.style]}
           source={this.props.placeHolderSource}
         />
+        {this.props.thumbnailSource &&
+          <Animated.Image
+            resizeMode={this.props.resizeMode}
+            style={[styles.image, { opacity: this.state.thumbnailOpacity }, this.props.style]}
+            source={this.props.thumbnailSource}
+            onLoad={() => this.onLoadThumbnail()}
+            blurRadius={this.props.thumbnailBlurRadius}
+          />
+        }
         <Animated.Image
-          resizeMode="cover"
-          style={[styles.image, { opacity: this.state.thumbnailOpacity }, this.props.style]}
-          source={this.props.thumbnailSource}
-          onLoad={() => this.onLoadThumbnail()}
-          blurRadius={this.props.thumbnailBlurRadius}
-        />
-        <Animated.Image
-          resizeMode="cover"
+          resizeMode={this.props.resizeMode}
           style={[styles.image, { opacity: this.state.imageOpacity }, this.props.style]}
           source={this.props.imageSource}
           onLoad={() => this.onLoadImage()}
@@ -69,9 +71,10 @@ ProgressiveImage.propTypes = {
   imageFadeDuration: PropTypes.number.isRequired,
   onLoadThumbnail: PropTypes.func.isRequired,
   onLoadImage: PropTypes.func.isRequired,
-  thumbnailSource: PropTypes.object.isRequired,
+  thumbnailSource: PropTypes.object,
   thumbnailFadeDuration: PropTypes.number.isRequired,
   thumbnailBlurRadius: PropTypes.number,
+  resizeMode: PropTypes.string.isRequired
 }
 
 ProgressiveImage.defaultProps = {
@@ -80,4 +83,5 @@ ProgressiveImage.defaultProps = {
   thumbnailBlurRadius: 5,
   onLoadThumbnail: Function.prototype,
   onLoadImage: Function.prototype,
+  resizeMode: 'cover'
 }
