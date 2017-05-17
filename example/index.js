@@ -9,9 +9,11 @@ import ProgressiveImage from 'react-native-progressive-image'
 
 const TheProgressiveImage = () =>
   <ProgressiveImage
+    placeHolderSource={require('images/placeholder.png')}
     thumbnailSource={{ uri: 'http://i.imgur.com/W3LKLla.png?bust' + Math.random() }}
     imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
     style={{ flex: 1, alignItems: 'stretch' }}
+    resizeMode="cover"
   />
 
 export default () =>
