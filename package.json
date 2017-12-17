@@ -11,6 +11,9 @@
     "progressive",
     "react-native"
   ],
+  "dependencies": {
+    "prop-types": "^15.6.0",
+  },
   "license": "MIT",
   "author": "Dylan Vann <dylan.vann@gmail.com> (dylanvann.com)",
   "main": "index.js",
