@@ -64,18 +64,19 @@ export default class ProgressiveImage extends Component {
  })
 
 ProgressiveImage.propTypes = {
-  placeHolderColor: PropTypes.string,
-  placeHolderSource: PropTypes.number,
-  imageSource: PropTypes.object.isRequired,
-  imageFadeDuration: PropTypes.number.isRequired,
-  onLoadThumbnail: PropTypes.func.isRequired,
-  onLoadImage: PropTypes.func.isRequired,
-  thumbnailSource: PropTypes.object.isRequired,
-  thumbnailFadeDuration: PropTypes.number.isRequired,
-  thumbnailBlurRadius: PropTypes.number,
-  placeholderResizeMode: PropTypes.string,
-  thumbnailResizeMode: PropTypes.string,
-  imageResizeMode: PropTypes.string,
+// Due to errors of PropTypes between RN versions
+//   placeHolderColor: PropTypes.string,
+//   placeHolderSource: PropTypes.number,
+//   imageSource: PropTypes.object.isRequired,
+//   imageFadeDuration: PropTypes.number.isRequired,
+//   onLoadThumbnail: PropTypes.func.isRequired,
+//   onLoadImage: PropTypes.func.isRequired,
+//   thumbnailSource: PropTypes.object.isRequired,
+//   thumbnailFadeDuration: PropTypes.number.isRequired,
+//   thumbnailBlurRadius: PropTypes.number,
+//   placeholderResizeMode: PropTypes.string,
+//   thumbnailResizeMode: PropTypes.string,
+//   imageResizeMode: PropTypes.string,
 }
 
 ProgressiveImage.defaultProps = {
