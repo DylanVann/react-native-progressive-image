@@ -27,23 +27,36 @@ export default class ProgressiveImage extends Component {
   }
 
   render() {
+    const { placeholderResizeMode, thumbnailResizeMode, imageResizeMode } = this.props;
+    const { children, style, imageStyle, imageRef, ...props } = this.props;
     return (
-      <View style={this.props.style}>
+      <View 
+        style={this.props.style}
+      >
         <Image
-          resizeMode="cover"
+          resizeMode={placeholderResizeMode}
           style={[styles.image, this.props.style]}
           source={this.props.placeHolderSource}
         />
         <Animated.Image
-          resizeMode="cover"
-          style={[styles.image, { opacity: this.state.thumbnailOpacity }, this.props.style]}
+          resizeMode={thumbnailResizeMode}
+          style={[
+            styles.image, 
+            { opacity: this.state.thumbnailOpacity }, 
+            this.props.style
+          ]}
           source={this.props.thumbnailSource}
           onLoad={() => this.onLoadThumbnail()}
           blurRadius={this.props.thumbnailBlurRadius}
         />
         <Animated.Image
-          resizeMode="cover"
-          style={[styles.image, { opacity: this.state.imageOpacity }, this.props.style]}
+          {...props}
+          resizeMode={imageResizeMode}
+          style={[
+            styles.image, 
+            { opacity: this.state.imageOpacity }, 
+            this.props.style
+          ]}
           source={this.props.imageSource}
           onLoad={() => this.onLoadImage()}
         />
@@ -63,15 +76,19 @@ export default class ProgressiveImage extends Component {
  })
 
 ProgressiveImage.propTypes = {
-  placeHolderColor: PropTypes.string,
-  placeHolderSource: PropTypes.number,
-  imageSource: PropTypes.object.isRequired,
-  imageFadeDuration: PropTypes.number.isRequired,
-  onLoadThumbnail: PropTypes.func.isRequired,
-  onLoadImage: PropTypes.func.isRequired,
-  thumbnailSource: PropTypes.object.isRequired,
-  thumbnailFadeDuration: PropTypes.number.isRequired,
-  thumbnailBlurRadius: PropTypes.number,
+// Due to errors of PropTypes between RN versions
+//   placeHolderColor: PropTypes.string,
+//   placeHolderSource: PropTypes.number,
+//   imageSource: PropTypes.object.isRequired,
+//   imageFadeDuration: PropTypes.number.isRequired,
+//   onLoadThumbnail: PropTypes.func.isRequired,
+//   onLoadImage: PropTypes.func.isRequired,
+//   thumbnailSource: PropTypes.object.isRequired,
+//   thumbnailFadeDuration: PropTypes.number.isRequired,
+//   thumbnailBlurRadius: PropTypes.number,
+//   placeholderResizeMode: PropTypes.string,
+//   thumbnailResizeMode: PropTypes.string,
+//   imageResizeMode: PropTypes.string,
 }
 
 ProgressiveImage.defaultProps = {
@@ -80,4 +97,7 @@ ProgressiveImage.defaultProps = {
   thumbnailBlurRadius: 5,
   onLoadThumbnail: Function.prototype,
   onLoadImage: Function.prototype,
+  placeholderResizeMode: 'cover',
+  thumbnailResizeMode: 'cover',
+  imageResizeMode: 'cover',
 }
